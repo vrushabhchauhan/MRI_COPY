@@ -1,10 +1,10 @@
-from keras.engine import Layer, InputSpec
-from keras import initializers
-from keras import regularizers
-from keras import constraints
-from keras import backend as K
+from tensorflow.keras.engine import Layer, InputSpec
+from tensorflow.keras import initializers
+from tensorflow.keras import regularizers
+from tensorflow.keras import constraints
+from tensorflow.keras import backend as K
 
-from keras.utils.generic_utils import get_custom_objects
+from tensorflow.keras.utils.generic_utils import get_custom_objects
 
 
 class GroupNormalization(Layer):
@@ -187,8 +187,8 @@ get_custom_objects().update({'GroupNormalization': GroupNormalization})
 
 
 if __name__ == '__main__':
-    from keras.layers import Input
-    from keras.models import Model
+    from tensorflow.keras.layers import Input
+    from tensorflow.keras.models import Model
     ip = Input(shape=(None, None, 4))
     #ip = Input(batch_shape=(100, None, None, 2))
     x = GroupNormalization(groups=2, axis=-1, epsilon=0.1)(ip)
